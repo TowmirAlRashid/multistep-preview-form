@@ -46,6 +46,7 @@ const Step1Comp = ({ formResult, setFormResult, formStep, setFormStep }) => {
         >
             {
                 data?.map(card => {
+                    console.log(card.status);
                     return (
                         <CustomCard 
                             key={card.id}

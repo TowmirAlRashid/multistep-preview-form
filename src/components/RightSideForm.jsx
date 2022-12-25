@@ -102,7 +102,7 @@ const RightSideForm = ({ formStep, setFormStep, formResult }) => {
         </Box>
 
         {
-            formStep === "2" && formResult.framework !== "" && 
+            formResult.installation_group !== "" && formResult.framework !== "" && 
             <Box
                 sx={{
                     width: "100%",
