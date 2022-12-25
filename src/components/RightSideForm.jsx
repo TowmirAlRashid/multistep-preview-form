@@ -2,12 +2,14 @@
 import { Box, Button, Card, CardContent, Typography } from '@mui/material'
 import React from 'react'
 
-const RightSideForm = ({ formStep, setFormStep, formResult, setFormResult }) => {
+const RightSideForm = ({ formStep, setFormStep, formResult }) => {
   return (
     <Box
         sx={{
             width: "100%",
+            height: "85vh",
             p: "0 2rem 1rem",
+            position: "relative"
             // display: 'flex',
             // flexDirection: "column",
             // justifyContent: "space-between",
@@ -23,7 +25,7 @@ const RightSideForm = ({ formStep, setFormStep, formResult, setFormResult }) => 
                 sx={{
                     fontSize: "1.2rem",
                     fontWeight: "bold",
-                    color: "white",
+                    color: "black",
                     mb: "1rem"
                 }}
             >
@@ -32,10 +34,11 @@ const RightSideForm = ({ formStep, setFormStep, formResult, setFormResult }) => 
 
             {
                 formResult.installation_group !== "" ?
-                    <Card 
+                    <Card
+                        variant='outlined' 
                         sx={{ 
                             width: "80%", 
-                            backgroundColor: "#dba8ac", 
+                            backgroundColor: "white", 
                             cursor: "pointer" 
                         }}
                         onClick={() => setFormStep("1")}
@@ -48,9 +51,10 @@ const RightSideForm = ({ formStep, setFormStep, formResult, setFormResult }) => 
                     </Card>
                     :
                     <Card
+                        variant='outlined'
                         sx={{ 
                             width: "80%", 
-                            backgroundColor: "#dba8ac", 
+                            backgroundColor: "white", 
                             height: "4rem"
                         }}
                     ></Card>
@@ -60,7 +64,7 @@ const RightSideForm = ({ formStep, setFormStep, formResult, setFormResult }) => 
                 sx={{
                     fontSize: "1.2rem",
                     fontWeight: "bold",
-                    color: "white",
+                    color: "black",
                     mt: "1.5rem",
                     mb: "1rem"
                 }}
@@ -70,10 +74,11 @@ const RightSideForm = ({ formStep, setFormStep, formResult, setFormResult }) => 
 
             {
                 formResult.framework !== "" ?
-                    <Card 
+                    <Card
+                        variant='outlined' 
                         sx={{ 
                             width: "80%", 
-                            backgroundColor: "#dba8ac", 
+                            backgroundColor: "white", 
                             cursor: "pointer" 
                         }}
                         onClick={() => setFormStep("2")}
@@ -86,9 +91,10 @@ const RightSideForm = ({ formStep, setFormStep, formResult, setFormResult }) => 
                     </Card>
                     :
                     <Card
+                        variant='outlined'
                         sx={{ 
                             width: "80%", 
-                            backgroundColor: "#dba8ac", 
+                            backgroundColor: "white", 
                             height: "4rem"
                         }}
                     ></Card>
@@ -111,7 +117,10 @@ const RightSideForm = ({ formStep, setFormStep, formResult, setFormResult }) => 
                     sx={{
                         width: "200px",
                         height: "3.5rem",
-                        mt: "30rem"
+                        position: "absolute",
+                        bottom: "2rem",
+                        right: "2rem",
+                        backgroundColor: "#005BEC"
                     }}
                     onClick={() => {
                         console.log(formResult)

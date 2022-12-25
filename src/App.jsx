@@ -30,7 +30,7 @@ function App() {
         sx={{
           width: "66%",
           height: "100vh",
-          backgroundColor: "#531cb3"
+          backgroundColor: "white"
         }}
       >
         <Typography // title of the form
@@ -39,7 +39,7 @@ function App() {
             p: "2rem",
             fontWeight: "bold",
             fontSize: "1.5rem",
-            color: "white"
+            color: "black"
           }}
         >
           Detailed Selective Form
@@ -58,7 +58,7 @@ function App() {
         sx={{
           width: "34%",
           height: "100vh",
-          backgroundColor: "#944bbb"
+          backgroundColor: "#f2f7ff"
         }}
       >
         <Typography // title of the form
@@ -67,7 +67,7 @@ function App() {
             p: "2rem",
             fontWeight: "bold",
             fontSize: "1.5rem",
-            color: "white"
+            color: "black"
           }}
         >
           Short Selective Form

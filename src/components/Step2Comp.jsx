@@ -1,5 +1,8 @@
-import { Box, Card, CardContent, Typography } from '@mui/material'
+import { Box, Typography } from '@mui/material'
 import React from 'react'
+
+import step2Data from '../step2CardData'
+import CustomCard from './CustomCard'
 
 const Step2Comp = ({ formResult, setFormResult, formStep, setFormStep }) => {
   return (
@@ -12,7 +15,7 @@ const Step2Comp = ({ formResult, setFormResult, formStep, setFormStep }) => {
             sx={{
                 fontSize: "1.2rem",
                 fontWeight: "bold",
-                color: "white",
+                color: "black",
                 mb: "2rem"
             }}
         >
@@ -22,7 +25,7 @@ const Step2Comp = ({ formResult, setFormResult, formStep, setFormStep }) => {
         <Typography
             sx={{
                 fontSize: "1.1rem",
-                color: "white",
+                color: "black",
                 mb: "1.5rem"
             }}
         >
@@ -40,191 +43,23 @@ const Step2Comp = ({ formResult, setFormResult, formStep, setFormStep }) => {
                 gap: "1.5rem"
             }}
         >
-            <Box
-                sx={{
-                    width: "30%"
-                }}
-            >
-                <Card 
-                    sx={{ 
-                        minWidth: "100%", 
-                        backgroundColor: `${formResult.framework === "Javascript" ? "#dba8ac" : "#cc92c2"}`, 
-                        cursor: "pointer" 
-                    }}
-                    onClick={() => {
-                        setFormResult({
-                            ...formResult,
-                            framework: "Javascript"
-                        })
-                        setFormStep("2")
-                    }}
-                >
-                    <CardContent>
-                        <Typography sx={{ fontSize: "1rem", color: "black", mb: "0.5rem" }}>
-                            Javascript
-                        </Typography>
-
-                        <Typography sx={{ fontSize: "0.8rem", color: "black" }}>
-                            Building with plain JS?
-                        </Typography>
-                    </CardContent>
-                </Card>
-            </Box>
-
-            <Box
-                sx={{
-                    width: "30%"
-                }}
-            >
-                <Card 
-                    sx={{ 
-                        minWidth: "100%", 
-                        backgroundColor: `${formResult.framework === "jQuery" ? "#dba8ac" : "#cc92c2"}`, 
-                        cursor: "pointer" 
-                    }}
-                    onClick={() => {
-                        setFormResult({
-                            ...formResult,
-                            framework: "jQuery"
-                        })
-                        setFormStep("2")
-                    }}
-                >
-                    <CardContent>
-                        <Typography sx={{ fontSize: "1rem", color: "black", mb: "0.5rem" }}>
-                            jQuery
-                        </Typography>
-
-                        <Typography sx={{ fontSize: "0.8rem", color: "black" }}>
-                            jQuery or jQuery Mobile?
-                        </Typography>
-                    </CardContent>
-                </Card>
-            </Box>
-
-            <Box
-                sx={{
-                    width: "30%"
-                }}
-            >
-                <Card 
-                    sx={{ 
-                        minWidth: "100%", 
-                        backgroundColor: `${formResult.framework === "Angular" ? "#dba8ac" : "#cc92c2"}`, 
-                        cursor: "pointer" 
-                    }}
-                    onClick={() => {
-                        setFormResult({
-                            ...formResult,
-                            framework: "Angular"
-                        })
-                        setFormStep("2")
-                    }}
-                >
-                    <CardContent>
-                        <Typography sx={{ fontSize: "1rem", color: "black", mb: "0.5rem" }}>
-                            Angular
-                        </Typography>
-
-                        <Typography sx={{ fontSize: "0.8rem", color: "black" }}>
-                            Using Angular 4+?
-                        </Typography>
-                    </CardContent>
-                </Card>
-            </Box>
-
-            <Box
-                sx={{
-                    width: "30%"
-                }}
-            >
-                <Card 
-                    sx={{ 
-                        minWidth: "100%", 
-                        backgroundColor: `${formResult.framework === "React" ? "#dba8ac" : "#cc92c2"}`, 
-                        cursor: "pointer" 
-                    }}
-                    onClick={() => {
-                        setFormResult({
-                            ...formResult,
-                            framework: "React"
-                        })
-                        setFormStep("2")
-                    }}
-                >
-                    <CardContent>
-                        <Typography sx={{ fontSize: "1rem", color: "black", mb: "0.5rem" }}>
-                            React
-                        </Typography>
-
-                        <Typography sx={{ fontSize: "0.8rem", color: "black" }}>
-                            Building with React Js?
-                        </Typography>
-                    </CardContent>
-                </Card>
-            </Box>
-
-            <Box
-                sx={{
-                    width: "30%"
-                }}
-            >
-                <Card 
-                    sx={{ 
-                        minWidth: "100%", 
-                        backgroundColor: `${formResult.framework === "Ionic Angular" ? "#dba8ac" : "#cc92c2"}`, 
-                        cursor: "pointer" 
-                    }}
-                    onClick={() => {
-                        setFormResult({
-                            ...formResult,
-                            framework: "Ionic Angular"
-                        })
-                        setFormStep("2")
-                    }}
-                >
-                    <CardContent>
-                        <Typography sx={{ fontSize: "1rem", color: "black", mb: "0.5rem" }}>
-                            Ionic Angular
-                        </Typography>
-
-                        <Typography sx={{ fontSize: "0.8rem", color: "black" }}>
-                            Using Ionic 2, 3, 4, 5 or 6?
-                        </Typography>
-                    </CardContent>
-                </Card>
-            </Box>
-
-            <Box
-                sx={{
-                    width: "30%"
-                }}
-            >
-                <Card 
-                    sx={{ 
-                        minWidth: "100%", 
-                        backgroundColor: `${formResult.framework === "Ionic React" ? "#dba8ac" : "#cc92c2"}`, 
-                        cursor: "pointer" 
-                    }}
-                    onClick={() => {
-                        setFormResult({
-                            ...formResult,
-                            framework: "Ionic React"
-                        })
-                        setFormStep("2")
-                    }}
-                >
-                    <CardContent>
-                        <Typography sx={{ fontSize: "1rem", color: "black", mb: "0.5rem" }}>
-                            Ionic React
-                        </Typography>
-
-                        <Typography sx={{ fontSize: "0.8rem", color: "black" }}>
-                            Using Ionic React 4, 5 or 6?
-                        </Typography>
-                    </CardContent>
-                </Card>
-            </Box>
+            {
+                step2Data?.map(card => {
+                    return (
+                        <CustomCard 
+                            key={card.id}
+                            statusToCheck={formResult.framework}
+                            status={card.status}
+                            formResult={formResult}
+                            setFormResult={setFormResult}
+                            targetField="framework"
+                            setFormStep={setFormStep}
+                            title={card.title}
+                            description={card.description}
+                        />
+                    )
+                })
+            }
         </Box>
     </Box>
   )
