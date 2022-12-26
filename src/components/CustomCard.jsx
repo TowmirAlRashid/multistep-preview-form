@@ -13,7 +13,7 @@ const CustomCard = ({ statusToCheck, status, formResult, setFormResult, targetFi
             sx={{ 
                 minWidth: "100%", 
                 backgroundColor: `${statusToCheck === status ? "white" : "#f2f7ff"}`,
-                border: `${statusToCheck === status ? "1px solid blue" : "none"}`, 
+                border: `${statusToCheck === status ? "1px solid blue" : "1px solid white"}`, 
                 cursor: "pointer",
                 "&:hover": {
                     backgroundColor: "white",
