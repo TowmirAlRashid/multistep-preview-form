@@ -27,17 +27,17 @@ const RightSideForm = ({ formStep, setFormStep, formResult, setFormResult }) => 
             width: "100%",
             height: "85vh",
             p: "0 2rem 1rem",
-            position: "relative"
-            // display: 'flex',
-            // flexDirection: "column",
-            // justifyContent: "space-between",
-            // alignItems: "center"
+            position: "relative",
+            display: 'flex',
+            flexDirection: "column",
+            justifyContent: "space-between",
+            alignItems: "center"
         }}
     >
         <Box
-            // sx={{
-            //     width: "100%",
-            // }}
+            sx={{
+                width: "100%",
+            }}
         >
             {
                 (formStep === "1" || formResult.installation_group !== "") && 
@@ -133,7 +133,7 @@ const RightSideForm = ({ formStep, setFormStep, formResult, setFormResult }) => 
             formResult.installation_group !== "" && formResult.framework !== "" && 
             <Box
                 sx={{
-                    width: "100%",
+                    width: "75%",
                     display: "flex",
                     flexDirection: "row",
                     justifyContent: "space-between",
@@ -145,9 +145,9 @@ const RightSideForm = ({ formStep, setFormStep, formResult, setFormResult }) => 
                     sx={{
                         width: "200px",
                         height: "3.5rem",
-                        position: "absolute",
-                        bottom: "1rem",
-                        left: "7rem",
+                        // position: "absolute",
+                        // bottom: "1rem",
+                        // left: "7rem",
                     }}
                     onClick={() => {
                         console.log(formResult)
@@ -161,9 +161,9 @@ const RightSideForm = ({ formStep, setFormStep, formResult, setFormResult }) => 
                     sx={{
                         width: "200px",
                         height: "3.5rem",
-                        position: "absolute",
-                        bottom: "1rem",
-                        right: "7rem",
+                        // position: "absolute",
+                        // bottom: "1rem",
+                        // right: "7rem",
                     }}
                     onClick={() => {
                         handleOpen()
